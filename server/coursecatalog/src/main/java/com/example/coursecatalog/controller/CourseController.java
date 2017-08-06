@@ -21,8 +21,7 @@ public class CourseController{
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Course> getCourses(@QueryParam("order") String order){
-        List<Course> courses = courseService.getCourses(order);
-        return courses;
+        return courseService.getCourses(order);
     }
 
     @GET
