@@ -10,6 +10,7 @@ CREATE TABLE COURSE (
   id INT NOT NULL PRIMARY KEY ,
   name VARCHAR(50) NOT NULL,
   hours INT,
+  level VARCHAR(50),
   teacher INT REFERENCES TEACHER(id),
   active BOOLEAN
 );
