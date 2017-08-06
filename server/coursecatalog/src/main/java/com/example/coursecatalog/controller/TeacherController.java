@@ -30,7 +30,7 @@ public class TeacherController {
     @Path("/test")
     @Produces(MediaType.TEXT_PLAIN)
     public String getTest() {
-        return "This is a successful test!";
+        return "This is a successful test! - [Teacher]";
     }
 
 }

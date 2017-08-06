@@ -23,4 +23,9 @@ public class CourseRepositoryImpl implements CourseRepository {
     public Course findById(Long id) {
         return courseMapper.findById(id);
     }
+
+    @Override
+    public void saveCourse(Course course) {
+        courseMapper.saveCourse(course);
+    }
 }

@@ -8,5 +8,5 @@ public interface CourseService {
 
     List<Course> getCourses(String order);
 
-    List<Course> postCourse();
+    void postCourse(Course course);
 }

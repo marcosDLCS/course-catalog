@@ -1,9 +1,7 @@
 package com.example.coursecatalog.domain.mapper;
 
 import com.example.coursecatalog.domain.model.Course;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,5 +18,9 @@ public interface CourseMapper {
 
     @Select("SELECT * FROM COURSE WHERE name = #{name}")
     Course findByName(@Param("name") String name);
+
+    @Insert("INSERT INTO COURSE (name, teacher, hours, level, active) VALUES (#{name}, #{teacher}, #{hours}, #{level}, #{active})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    void saveCourse(Course course);
 
 }

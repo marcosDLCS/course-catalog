@@ -10,7 +10,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service("courseService")
 public class CourseServiceImpl implements CourseService{
@@ -23,14 +22,14 @@ public class CourseServiceImpl implements CourseService{
     }
 
     @Override
-    public List<Course> getCourses(final String  order) {
+    public List<Course> getCourses(final String order) {
         final List<Course> courses = courseRepository.findAll();
         return courses.isEmpty() ? Collections.emptyList() : returnOrderedList(courses, order);
     }
 
     @Override
-    public List<Course> postCourse() {
-        return null;
+    public void postCourse(final Course course) {
+        courseRepository.saveCourse(course);
     }
 
     private List<Course> returnOrderedList(final List<Course> list, final String order){

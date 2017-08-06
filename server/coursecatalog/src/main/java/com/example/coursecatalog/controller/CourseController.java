@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Component
@@ -28,15 +29,15 @@ public class CourseController{
     @Path("/test")
     @Produces(MediaType.TEXT_PLAIN)
     public String getTest(){
-        return "This is a successful test!";
+        return "This is a successful test! - [Course]";
     }
 
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Course> postCourse(){
-        List<Course> courses = courseService.postCourse();
-        return courses;
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response postCourse(final Course course){
+        courseService.postCourse(course);
+        return Response.status(201).entity("Course saved").build();
     }
 }

@@ -10,4 +10,6 @@ public interface CourseRepository {
 
     Course findById(Long id);
 
+    void saveCourse(Course course);
+
 }
