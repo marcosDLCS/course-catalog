@@ -1,3 +1,5 @@
+-- Schema initialization
+
 CREATE TABLE TEACHER (
   id INT NOT NULL PRIMARY KEY ,
   name VARCHAR(50) NOT NULL,

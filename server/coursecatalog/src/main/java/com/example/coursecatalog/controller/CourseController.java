@@ -5,11 +5,8 @@ import com.example.coursecatalog.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Component
@@ -22,9 +19,9 @@ public class CourseController{
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Course> getCourses(){
-        List<Course> courses = courseService.getCourses();
-        return (List<Course>) Response.ok().build();
+    public List<Course> getCourses(@QueryParam("order") String order){
+        List<Course> courses = courseService.getCourses(order);
+        return courses;
     }
 
     @GET
@@ -32,5 +29,14 @@ public class CourseController{
     @Produces(MediaType.TEXT_PLAIN)
     public String getTest(){
         return "This is a successful test!";
+    }
+
+    @POST
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Course> postCourse(){
+        List<Course> courses = courseService.postCourse();
+        return courses;
     }
 }

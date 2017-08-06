@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface CourseService {
 
-    List<Course> getCourses();
+    List<Course> getCourses(String order);
+
+    List<Course> postCourse();
 }
