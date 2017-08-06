@@ -1,6 +1,6 @@
 package com.example.coursecatalog.service;
 
-import com.example.coursecatalog.domain.Course;
+import com.example.coursecatalog.domain.model.Course;
 
 import java.util.List;
 

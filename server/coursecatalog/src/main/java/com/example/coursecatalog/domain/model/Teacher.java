@@ -1,17 +1,11 @@
-package com.example.coursecatalog.domain;
+package com.example.coursecatalog.domain.model;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity
-@Table(name = "TEACHER")
-public class Teacher {
+public class Teacher implements Serializable{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String name;
-
     private String surname;
 
     public Long getId() {

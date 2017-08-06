@@ -1,21 +1,23 @@
-package com.example.coursecatalog.domain;
+package com.example.coursecatalog.domain.model;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity
-@Table(name = "COURSE")
-public class Course {
+public class Course implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    private static final long serialVersionUID = 1L;
+
     private Long id;
-
     private String name;
-
     private int hours;
+    private Long teacher;
 
-    @ManyToOne
-    private Teacher teacher;
+    public Long getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Long teacher) {
+        this.teacher = teacher;
+    }
 
     private boolean active;
 
@@ -25,14 +27,6 @@ public class Course {
 
     public void setHours(int hours) {
         this.hours = hours;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
     }
 
     public boolean isActive() {
