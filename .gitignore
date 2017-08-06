@@ -8,3 +8,10 @@
 *.log
 out
 gen
+.DS_Store
+client/
+server/.DS_Store
+server/coursecatalog/src/main/resources/static/
+server/coursecatalog/src/main/resources/templates/
+src/main/resources/static/
+src/main/resources/templates/
