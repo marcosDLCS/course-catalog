@@ -1,0 +1,16 @@
+-- Schema initialization
+
+CREATE TABLE TEACHER (
+  id INT AUTO_INCREMENT PRIMARY KEY ,
+  name VARCHAR(50) NOT NULL,
+  surname VARCHAR(50)
+);
+
+CREATE TABLE COURSE (
+  id INT AUTO_INCREMENT PRIMARY KEY ,
+  name VARCHAR(50) NOT NULL,
+  hours INT,
+  level VARCHAR(50),
+  teacher INT REFERENCES TEACHER(id),
+  active BOOLEAN
+);
