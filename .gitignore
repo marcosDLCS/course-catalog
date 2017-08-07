@@ -1,5 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-### Example user template template
 ### Example user template
 
 # IntelliJ project files
@@ -12,5 +11,6 @@ gen
 server/.DS_Store
 server/coursecatalog/src/main/resources/static/
 server/coursecatalog/src/main/resources/templates/
+server/coursecatalog/target
 src/main/resources/static/
 src/main/resources/templates/
