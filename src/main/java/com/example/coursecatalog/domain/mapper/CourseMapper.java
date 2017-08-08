@@ -10,13 +10,13 @@ import java.util.List;
 @Mapper
 public interface CourseMapper {
 
-    @Select("SELECT * FROM COURSE")
+    @Select("SELECT * FROM COURSE WHERE active = true")
     List<Course> findAll();
 
-    @Select("SELECT * FROM COURSE WHERE id = #{id}")
+    @Select("SELECT * FROM COURSE WHERE id = #{id} AND active = true")
     Course findById(@Param("id") Long id);
 
-    @Select("SELECT * FROM COURSE WHERE name = #{name}")
+    @Select("SELECT * FROM COURSE WHERE name = #{name} AND active = true")
     Course findByName(@Param("name") String name);
 
     @Insert("INSERT INTO COURSE (name, teacher, hours, level, active) VALUES (#{name}, #{teacher}, #{hours}, #{level}, #{active})")

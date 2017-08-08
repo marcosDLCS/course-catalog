@@ -9,6 +9,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Component
@@ -21,9 +22,11 @@ public class TeacherController {
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Teacher> getTeachers() {
-        List<Teacher> teachers = teacherService.getTeachers();
-        return teachers;
+    public Response getTeachers() {
+        return Response.ok().entity(teacherService.getTeachers())
+                .header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                .allow("OPTIONS").build();
     }
 
     @GET

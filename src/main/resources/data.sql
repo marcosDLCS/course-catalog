@@ -12,12 +12,12 @@ VALUES ('Andrea ', 'Zucchini Garcia');
 -- Courses
 
 INSERT INTO COURSE (name, teacher, hours, level, active)
-VALUES ('A - Mi primer curso', 1, 5, 'Intermediate', 1);
+VALUES ('A - Mi primer curso', 1, 5, 'Basico', true);
 INSERT INTO COURSE (name, teacher, hours, level, active)
-VALUES ('B - Mi segundo curso', 1, 10, 'Intermediate', 1);
+VALUES ('B - Mi segundo curso', 1, 10, 'Intermedio', true);
 INSERT INTO COURSE (name, teacher, hours, level, active)
-VALUES ('C - Mi tercer curso', 2, 15, 'Intermediate', 1);
+VALUES ('C - Mi tercer curso', 2, 15, 'Avanzado', true);
 INSERT INTO COURSE (name, teacher, hours, level, active)
-VALUES ('D - Mi cuarto curso', 2, 20, 'Intermediate', 1);
+VALUES ('D - Mi cuarto curso', 2, 20, 'Basico', true);
 INSERT INTO COURSE (name, teacher, hours, level, active)
-VALUES ('E - Mi quinto curso', 3, 25, 'Intermediate', 0);
+VALUES ('E - Mi quinto curso', 3, 25, 'Intermedio', false);
