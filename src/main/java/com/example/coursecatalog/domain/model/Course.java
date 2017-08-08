@@ -9,9 +9,18 @@ public class Course implements Serializable {
     private Long id;
     private String name;
     private Long teacher;
+    private String teacherName;
     private int hours;
     private String level;
     private boolean active;
+
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
 
     public String getLevel() {
         return level;
@@ -20,8 +29,6 @@ public class Course implements Serializable {
     public void setLevel(String level) {
         this.level = level;
     }
-
-
 
     public Long getTeacher() {
         return teacher;

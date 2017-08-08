@@ -22,15 +22,8 @@ public class CourseController {
     public Response getCourses(@QueryParam("order") String order) {
         return Response.ok().entity(courseService.getCourses(order))
                 .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                .header("Access-Control-Allow-Methods", "GET")
                 .allow("OPTIONS").build();
-    }
-
-    @GET
-    @Path("/test")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getTest() {
-        return "This is a successful test! - [Course]";
     }
 
     @POST
@@ -39,6 +32,27 @@ public class CourseController {
     @Produces(MediaType.TEXT_PLAIN)
     public Response postCourse(final Course course) {
         courseService.postCourse(course);
-        return Response.status(201).entity("Course saved").build();
+        return Response.status(201).entity("Course saved")
+                .header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Methods", "POST")
+                .allow("OPTIONS").build();
+    }
+
+    @OPTIONS
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postCourseOptions() {
+        return Response.ok()
+                .header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Methods", "POST")
+                .header("Access-Control-Allow-Headers", "content-type, accept")
+                .allow("OPTIONS").build();
+    }
+
+    @GET
+    @Path("/test")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getTest() {
+        return "This is a successful test! - [Course]";
     }
 }
