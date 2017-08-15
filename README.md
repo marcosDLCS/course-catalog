@@ -18,5 +18,4 @@ https://github.com/marcosDLCS/course-catalog-client
 ## Instalación del proyecto
 
 * Checkout del proyecto
-* Instalación en tu IDE favorito como un proyecto Maven
-* Run!
+* Ionic serve
