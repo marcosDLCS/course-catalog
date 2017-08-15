@@ -16,7 +16,6 @@ public class CourseServiceImpl implements CourseService{
 
     private final CourseRepository courseRepository;
 
-    @Autowired
     public CourseServiceImpl(CourseRepository courseRepository) {
         this.courseRepository = courseRepository;
     }
@@ -33,7 +32,8 @@ public class CourseServiceImpl implements CourseService{
     }
 
     private List<Course> returnOrderedList(final List<Course> list, final String order){
-        if(order != null && (order.equalsIgnoreCase("asc") || order.equalsIgnoreCase("desc"))){
+        if(order != null && (order.equalsIgnoreCase("asc")
+                || order.equalsIgnoreCase("desc"))){
             final List<Course> orderedList = list.stream()
                     .sorted(Comparator.comparing(Course::getName)).collect(Collectors.toList());
             if (order.equalsIgnoreCase("desc")) Collections.reverse(orderedList);

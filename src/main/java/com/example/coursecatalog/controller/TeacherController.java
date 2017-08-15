@@ -20,7 +20,6 @@ public class TeacherController {
     private TeacherService teacherService;
 
     @GET
-    @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getTeachers() {
         return Response.ok().entity(teacherService.getTeachers())
