@@ -20,3 +20,8 @@ https://github.com/marcosDLCS/course-catalog-client
 * Checkout del proyecto
 * Instalación en tu IDE favorito como un proyecto Maven
 * Run!
+
+## Ramas
+
+* Development (default)
+* Master (protected)
