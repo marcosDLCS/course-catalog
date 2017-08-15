@@ -1,0 +1,12 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.coursecatalog.domain.repository.TeacherMapper">
+    <select id="findAll" parameterType="string" resultMap="teacher">
+        SELECT * FROM TEACHER
+    </select>
+
+    <resultMap type="com.example.coursecatalog.domain.model.Teacher" id="teacher">
+        <id column="id" property="id" javaType="long"/>
+        <result column="name" property="name" javaType="string"/>
+        <result column="surname" property="surname" javaType="string"/>
+    </resultMap>
+</mapper>

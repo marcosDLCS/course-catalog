@@ -8,18 +8,17 @@ public class Course implements Serializable {
 
     private Long id;
     private String name;
-    private Long teacher;
-    private String teacherName;
+    private Teacher teacher;
     private int hours;
     private String level;
     private boolean active;
 
-    public String getTeacherName() {
-        return teacherName;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     public String getLevel() {
@@ -29,16 +28,6 @@ public class Course implements Serializable {
     public void setLevel(String level) {
         this.level = level;
     }
-
-    public Long getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Long teacher) {
-        this.teacher = teacher;
-    }
-
-
 
     public int getHours() {
         return hours;

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan("com.example.coursecatalog.*")
-@MapperScan("com.example.coursecatalog.domain.mapper")
+@MapperScan("com.example.coursecatalog.domain.repository")
 public class CourseCatalogApplication {
 
     public static void main(String[] args) {

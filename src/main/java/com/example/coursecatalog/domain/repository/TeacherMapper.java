@@ -1,4 +1,4 @@
-package com.example.coursecatalog.domain.mapper;
+package com.example.coursecatalog.domain.repository;
 
 import com.example.coursecatalog.domain.model.Teacher;
 import org.apache.ibatis.annotations.Mapper;
@@ -8,13 +8,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository("teacherMapper")
 @Mapper
 public interface TeacherMapper {
 
-    @Select("SELECT * FROM TEACHER")
     List<Teacher> findAll();
-
-    @Select("SELECT * FROM TEACHER WHERE id = #{id}")
-    Teacher findById(@Param("id") Long id);
 }

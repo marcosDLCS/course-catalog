@@ -1,7 +1,7 @@
 package com.example.coursecatalog.controller;
 
-import com.example.coursecatalog.domain.model.Teacher;
 import com.example.coursecatalog.service.TeacherService;
+import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +10,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.List;
 
 @Component
 @Path("/teachers")
